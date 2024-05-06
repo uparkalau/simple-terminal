@@ -1,9 +1,13 @@
 {
   "name": "simple-terminal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/uparkalau/simple-terminal.git",
   "description": "SimpleTerminal is a lightweight, TypeScript-based terminal emulator for web applications. It provides a simple and intuitive API for creating custom terminal commands and handling user input.",
-  "keywords": ["terminal-emulator","command-line-interface", "console-application"],
+  "keywords": [
+    "terminal-emulator",
+    "command-line-interface",
+    "console-application"
+  ],
   "main": "dist/SimpleTerminal.js",
   "types": "dist/SimpleTerminal.d.ts",
   "scripts": {
@@ -24,5 +28,5 @@
   },
   "publishConfig": {
     "access": "public"
-  }  
+  }
 }
