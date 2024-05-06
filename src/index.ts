@@ -29,7 +29,7 @@ terminal.registerCommand("ls", (path: string = "/") => {
   }
 });
 
-// Register 'events' command
-terminal.registerCommand("events", async () => {
-  await terminal.events();
-});
+// // Register 'events' command
+// terminal.registerCommand("events", async () => {
+//   await terminal.events();
+// });

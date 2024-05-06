@@ -1,4 +1,4 @@
-import SimpleTerminal from './SimpleTerminal.js';
+import SimpleTerminal from '../../dist/SimpleTerminal.js';
 
 const terminal = new SimpleTerminal("#terminal");
 

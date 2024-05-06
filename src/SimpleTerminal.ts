@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 type CommandFunction = (...args: string[]) => void;
 
 export default class SimpleTerminal{
@@ -16,7 +16,7 @@ export default class SimpleTerminal{
     this.clear = this.clear.bind(this);
     this.help = this.help.bind(this);
     this.ls = this.ls.bind(this);
-    this.events = this.events.bind(this);
+    // this.events = this.events.bind(this);
     this.cd = this.cd.bind(this);
     this.echo = this.echo.bind(this);
 
@@ -24,7 +24,7 @@ export default class SimpleTerminal{
       clear: this.clear,
       help: this.help,
       ls: this.ls,
-      events: this.events,
+      // events: this.events,
       cd: this.cd,
       echo: this.echo,
     };
@@ -97,28 +97,28 @@ export default class SimpleTerminal{
     this.echo(`Changed directory to ${path}`);
   };
 
-  public events = async (): Promise<void> => {
-    try {
-      const response = await axios.get(
-        "https://eonet.gsfc.nasa.gov/api/v3/events/geojson"
-      );
-      const features = response.data.features;
-      const lastTwoEvents = features.slice(-2); // Get the last two events
+  // public events = async (): Promise<void> => {
+  //   try {
+  //     const response = await axios.get(
+  //       "https://eonet.gsfc.nasa.gov/api/v3/events/geojson"
+  //     );
+  //     const features = response.data.features;
+  //     const lastTwoEvents = features.slice(-2); // Get the last two events
 
-      lastTwoEvents.forEach(
-        (event: {
-          properties: { title: any; date: string | number | Date };
-        }) => {
-          const title = event.properties.title;
-          const date = new Date(event.properties.date).toLocaleDateString(
-            "en-US"
-          );
-          this.echo(`${title} - ${date}`);
-        }
-      );
-    } catch (error) {
-      this.echo("Error fetching events.");
-    }
-  };
+  //     lastTwoEvents.forEach(
+  //       (event: {
+  //         properties: { title: any; date: string | number | Date };
+  //       }) => {
+  //         const title = event.properties.title;
+  //         const date = new Date(event.properties.date).toLocaleDateString(
+  //           "en-US"
+  //         );
+  //         this.echo(`${title} - ${date}`);
+  //       }
+  //     );
+  //   } catch (error) {
+  //     this.echo("Error fetching events.");
+  //   }
+  // };
   
 }
